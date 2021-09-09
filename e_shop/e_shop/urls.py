@@ -24,5 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("home/", include("home.urls")),
-    path("^$", lambda request: redirect("/home/")),
+    path("shop/", include("shop.urls")),
+    path("carts/", include("cart.urls")),
+    path("single_product/", include("single_product.urls")),
+    path("", lambda request: redirect("/home/")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

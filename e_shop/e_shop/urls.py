@@ -27,5 +27,6 @@ urlpatterns = [
     path("shop/", include("shop.urls")),
     path("carts/", include("cart.urls")),
     path("single_product/", include("single_product.urls")),
+    path("checkout/", include("checkout.urls")),
     path("", lambda request: redirect("/home/")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

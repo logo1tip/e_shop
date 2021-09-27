@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'home',
     'shop',
     'single_product',
+    'cart',
+    'checkout',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +122,5 @@ STATICFILES_DIRS = [BASE_DIR / "e_shop" / "static"]
 
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user.User'

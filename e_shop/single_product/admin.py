@@ -1,3 +1,6 @@
 from django.contrib import admin
+from single_product.models import Product
 
-# Register your models here.
+
+admin.site.register(Product)
+

@@ -14,8 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.http import request
+from django.urls import path, include
+from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path("home/", include("home.urls")),
+    path("shop/", include("shop.urls")),
+    path("carts/", include("cart.urls")),
+    path("single_product/", include("single_product.urls")),
+    path("checkout/", include("checkout.urls")),
+    path("", lambda request: redirect("/home/")),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
